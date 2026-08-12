@@ -9,7 +9,7 @@ export default async function TracksPage({ params }: { params: Promise<{ item: s
   const [libraryItem, currentUser] = await getData(getLibraryItem(itemId, true), getCurrentUser())
 
   if (!libraryItem || !currentUser) {
-    redirect('/')
+    redirect('/library')
   }
 
   const itemPath = `/library/${libraryItem.libraryId}/item/${libraryItem.id}`
